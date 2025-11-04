@@ -31,14 +31,14 @@ def total_sales_by_product(data, product_key):
 
 def average_daily_sales(data, product_key):
     total = total_sales_by_product(data, product_key)
-    return total
+    return total / len(data)
 
 
 def best_selling_day(data):
     max_sales = -1
     best_day = -1
     for day_data in data:
-        current_sales = day_data["product_a"] + day data["product_b"] + day_data["product_c"]
+        current_sales = day_data["product_a"] + day_data["product_b"] + day_data["product_c"]
         if current_sales > max_sales:
             max_sales = current_sales
             best_day = day_data["day"]
